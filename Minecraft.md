@@ -1,1 +1,0 @@
-CoderDojo堺では、MinecraftのComputerCraftを使用し、プログラミングを学んでいます。
