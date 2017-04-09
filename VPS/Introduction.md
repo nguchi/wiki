@@ -20,4 +20,4 @@ HDDは、ファイルアクセスが頻繁にあるものでもないのでHDD�
 sudo apt update
 sudo apt upgrade
 ```
-で、OSのパッチを当てましょう。
+で、OSのパッチを当て再起動しましょう。
