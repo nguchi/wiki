@@ -21,7 +21,8 @@ _/etc/iptables/iptables.rules_
 sudo nano /etc/iptables/iptables.rules
 ```
 
-VPS上では、Minecraftとホームページぐらいを動かす予定なので、そのポートとSSHを接続するためのポートを開放します。
+VPS上では、Minecraftとホームページぐらいを動かす予定なので、そのポートとSSHを接続するためのポートを開放します。  
+iptablesの詳細な説明は、専門書などで確認してください。
 ```
 *filter
 :INPUT ACCEPT [0:0]
@@ -30,18 +31,28 @@ VPS上では、Minecraftとホームページぐらいを動かす予定なの�
 -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 -A INPUT -p icmp -j ACCEPT
 -A INPUT -i lo -j ACCEPT
+#（シャープから始まるとコメント）
+#SSHはデフォルト TCP 22番ポート以外にする。
 #-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
--A INPUT -m state --state NEW -m tcp -p tcp --dport 22029 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport ***** -j ACCEPT
+#UDP 53はDNS
 -A INPUT -p udp --sport 53 -j ACCEPT
+#TCP 80はHTTP
 -A INPUT -p tcp --dport 80 -j ACCEPT
 #-A INPUT -p tcp --dport 443 -j ACCEPT
+#TCP 25565はMinecraft
 -A INPUT -p tcp --dport 25565 -j ACCEPT
 -A INPUT -j REJECT --reject-with icmp-host-prohibited
 -A FORWARD -j REJECT --reject-with icmp-host-prohibited
 COMMIT
 ```
 
+これで、使用したいポートの開放設定ができました。これで再起動をかけるわけですが、その前にSSHの設定を行います。
+
 ##SSH（Secure Shell）の設定
  SSHは、安全な通信を行えるターミナルソフトです。
- さくらVPSは、OSインストール直後ではSSHのポートのみ開放されており、その他は閉塞されています。（ただpingは飛んだような・・・）  
+ さくらVPSは、OSインストール直後では、ほぼSSHのポートのみ開放されており、その他は閉塞されています。  
  まずSSHの設定をしましょう。
+
+1. 管理者へ昇格します。  管理者への昇格は___su - ___
+
