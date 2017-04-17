@@ -9,9 +9,9 @@
  iptablesはネットワーク関連の設定ファイルでテキストエディタで設定できます。  
  まずは、場所を探して見ましょう。
 
-+ VPSにログインします。
-+ iptablesは、バイナリーファイルですので、元になるiptables.rulesを編集、保存し再起動を行います。
-+ iptables.rulesは以下の場所に保存されています。
+* VPSにログインします。
+* iptablesは、バイナリーファイルですので、元になるiptables.rulesを編集、保存し再起動を行います。
+* iptables.rulesは以下の場所に保存されています。
 
 _/etc/iptables/iptables.rules_  
 
