@@ -63,7 +63,7 @@ su -
 1. 設定ファイルを編集します。  設定ファイルは _/etc/ssh/sshd_config_にあります。  同じディレクトリにssh_configファイルがありますが、これはクライアントを使う時のファイルですので、ここでは設定しません。
 
 ```
-nano /etc/ssh/sshd__config
+nano /etc/ssh/sshd_config
 ```
 
 で、編集を始めます。
