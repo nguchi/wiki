@@ -150,9 +150,10 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 # and ChallengeResponseAuthentication to 'no'.
 UsePAM yes
 ```  
-servicesファイルもついてに変更しておきましょう。  
-servicesは、一般的なネットワークサービスの名称とポート番号を設定しているファイルで、sshのポートも定義されているため、VPSで利用するポートに変更しておきます。  servicesは _/etc/services_ にあります。  
-これを編集します。
+servicesファイルもついでに変更しておきましょう。  
+servicesは、一般的なネットワークサービスの名称とポート番号を設定しているファイルで、sshのポートも定義されているため、VPSで利用するポートに変更しておきます。servicesは  
+_/etc/services_  
+にあります。これを編集します。  
 ```
 nano /etc/services
 ```  
