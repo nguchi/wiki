@@ -64,9 +64,11 @@ COMMIT
 ```
 nano /etc/ssh/sshd_config
 ```
+
 で、編集を始めます。
 
 中身の説明は、専門書などで調べてください。こんな感じになります。  （とりあえず、パスワード認証有効の状態です。きちんと設定が終われば無効にするのが良いです。）
+
 ```
 # Package generated configuration file
 # See the sshd_config manpage for details
