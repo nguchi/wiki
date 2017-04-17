@@ -7,14 +7,17 @@
 ##iptablesを編集する
  iptablesはネットワーク関連の設定ファイルでテキストエディタで設定できます。  
  まずは、場所を探して見ましょう。
- VPSにログインし、
-which iptablesと打つとiptablesの場所がわかります。
+1.VPSにログインします。
+1.iptablesは、バイナリーファイルですので、元になるiptables.rulesを編集、保存し再起動を行います。
+1.iptables.rulesは以下の場所に保存されています。
+_/etc/iptables/iptables.rules_  
+
 ```
 which iptables
 ```
+と、入力すると
 
 ##SSH（Secure Shell）の設定
  SSHは、安全な通信を行えるターミナルソフトです。
  さくらVPSは、OSインストール直後ではSSHのポートのみ開放されており、その他は閉塞されています。（ただpingは飛んだような・・・）  
  まずSSHの設定をしましょう。
-
