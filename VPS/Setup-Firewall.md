@@ -13,12 +13,11 @@
 1. iptablesは、バイナリーファイルですので、元になるiptables.rulesを編集、保存し再起動を行います。
 1. iptables.rulesは以下の場所に保存されています。
 
-_/etc/iptables/iptables.rules_  
+```_/etc/iptables/iptables.rules_```  
 
-```
-which iptables
-```
-と、入力すると
+このファイルを編集します。編集には管理者権限が入りますので、以下のように入力します。
+
+```sudo nano /etc/iptables/iptables.rules```
 
 ##SSH（Secure Shell）の設定
  SSHは、安全な通信を行えるターミナルソフトです。
