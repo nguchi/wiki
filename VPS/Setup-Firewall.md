@@ -70,6 +70,7 @@ nano /etc/ssh/sshd_config
 
 # What ports, IPs and protocols we listen for
 #Port 22
+#ここはiptablesで設定した値にする
 Port *****
 # Use these options to restrict which interfaces/protocols sshd will bind to
 #ListenAddress ::
